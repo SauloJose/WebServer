@@ -1,0 +1,631 @@
+/*Definições de animações*/
+@keyframes surgir {
+    0% {transform: scale(0);}
+    25%{transform: scale(0.25);}
+    50%{transform: scale(0.50);}
+    75%{transform: scale(0.75);}
+    100%{ transform: scale(1.0);}
+}
+
+@keyframes escurecerTela{
+    0%{background-color: rgba(0, 0, 0, 0.0);};
+    100%{background-color: rgba(0, 0, 0, 0.6);}
+}
+
+/* Estilos Globais*/
+body{
+    background: #000000 url("Background.png") no-repeat left top fixed;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+footer{
+    user-select: none;
+}
+/* Estilos individuais*/
+
+/*Página de boas vindas.*/
+
+img#logoimg{
+    width: 25%;
+    padding: 1vh;
+    user-select: none;
+}
+
+
+div#logo{
+    position: relative;
+    left: 1%;
+    width: auto;
+    height: auto;
+    text-align: center;
+}
+
+#info p{
+    padding-left: 1fem;
+    padding-right: 1vw;
+}
+
+#mascara{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+div#info{
+    position: relative;
+    background-color: rgba(240, 239, 239,0.789);
+    left: 10vw;
+    width: 80vw;;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    border-radius: 15px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    border: none;
+    padding: 10px;
+    user-select: none;
+    transition: background-color 0.2s;
+}
+
+#info:hover{
+    background-color: rgba(240, 239, 239, 1);
+}
+
+#info h3{
+    padding-top: 14px;
+    font-size: 14pt;
+}
+div#continuar{
+    position: absolute;
+    padding-top: 4vh;
+    width: 80vw;
+    left: 10vw;
+    text-align: center;
+}
+
+.btnHome{
+    width: 180px;
+    height: 40px;
+    border-radius: 15px;
+    background-color: rgba(255, 176, 4, 0.43);
+    border: none;
+    font-size: 16pt;
+    color: rgb(0, 0, 0);
+    transition: background-color 0.5s, transform 0.5s;
+}
+
+.btnHome:hover{
+    cursor: pointer;
+    background-color: rgb(226, 187, 10);
+    transform: scale(1.05);
+}
+
+
+/*Estilo da página Inicial*/
+
+.container{
+    /*div pai como relativo*/
+    position: relative;
+    display: table;
+    /*background-color: rgb(236, 224, 224);*/
+
+    text-align: center;
+    /* dimensões */
+    width: 80vw;
+    height: 50vh;
+    z-index: 1;
+    max-width: 600px;
+    /*posição*/
+
+    margin-right: auto;
+    margin-left: auto;
+    top: 5vh;
+    bottom: 5vh;
+    
+}
+
+.container header{
+    position: relative;
+    /*background-color: rgb(118, 109, 109);*/
+    margin: auto 0;
+    color: white;
+
+    font-size:14pt;
+
+    /*dimensões*/
+    width: 80vw;
+    height: auto;
+
+    /*posição*/
+
+}
+
+.container #navS{
+    position: relative;
+    top: 50px;
+    color: white;
+    font-style: italic;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.container section{
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow:10px 10px 10px rgba(0, 0, 0, 0.196);
+
+    /*dimensões*/
+    width: 80vw;
+    height: auto;
+    max-width: 800px;
+    padding: 10px;
+
+    /*posição*/
+    top:80px;
+
+    /*Margem*/
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.container footer{
+    position: relative;
+    color: white;
+    /*dimensões*/
+    width: 80vw;
+    height: auto;
+
+    /*posição*/
+    bottom: -100px;
+}
+
+
+/* Logotipo ajustes*/
+.ConjuntoLogo{
+    display: inline-flex;
+    position: relative;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: transform 0.8s;
+}
+
+.conjuntoLogo:hover{
+    transform: scale(1.1);
+}
+
+div#iconLogo{
+    position: relative;
+    user-select: none;
+}
+
+div#NomeLogo h2{
+    color: rgb(172, 186, 192);
+    position: absolute;
+    left:-36px;
+    top: 50px;
+    font-size:25pt;
+    user-select: none;
+}
+
+
+.logoFixo{
+    width: 80px;
+    user-select: none;
+}
+
+/* Ajustes para caixa de diálogo da página inicial*/
+
+#configOBS{
+    border-radius: 15px;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 4px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 13pt;
+    text-align: justify;
+}
+
+
+
+#dadosProt{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align:left;
+    font-size: 12pt;
+    padding: 15px;
+}
+
+
+/*Estilizando botões de navegação.*/
+/*Estilo da página de configurações*/
+
+
+/*Configuração da Conexão*/
+#configOBSCon{
+    position: relative;
+    border-radius: 15px;
+    width: 60vw;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 4px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 13pt;
+    text-align: justify;
+
+}
+
+#configOBSCon a.conectNext{
+    position: relative;
+    left: calc(50% - 50px);
+}
+
+.btnCont{
+    width: 100px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: rgba(0, 166, 255, 0.43);
+    border: none;
+    font-size: 13pt;
+    color: rgb(0, 0, 0);
+    transition: background-color 0.5s, transform 0.8s;
+}
+
+.btnCont:hover{
+    cursor: pointer;
+    background-color: rgba(0, 166, 255, 0.95);
+    transform: scale(1.01);
+}
+
+
+/*WiFi Manager*/
+#inputsWiFiManager{
+    position: relative;
+    border-radius: 5px;
+    width: 60vw;
+    max-width: 550px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 4px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 11pt;
+    text-align: center;
+}
+
+.obs{
+    font-size:11pt;
+    font-style: italic;
+}
+
+.formulario input.inputForm{
+    margin-bottom: 1vh;
+    margin-top: 1vh;
+}
+
+.inputForm{
+    width: 200px;
+    height: 25px;
+    border-radius:5px;
+    text-align: center;
+    font: 14pt;
+    padding: 1px;
+    transition: transform 0.3s;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+.inputForm:hover{
+    transform: scale(1.005);
+    background-color:rgba(172, 186, 192, 0.408);
+    border-color: rgb(4, 180, 255);
+    box-shadow: 0 0 5px rgb(4,180,255,0.3);
+}
+
+.inputForm:focus{
+    transform: scale(1.05);
+    background-color:rgba(172, 186, 192, 0.648)
+}
+
+
+/*Validação do fórmulário*/
+/*Parâmetro invválido*/
+.inputForm:focus:invalid{
+    box-shadow: 0 0 5px #d33636;
+    background: #fff url("invalid.png") no-repeat 98% center;
+    border-color: #b03535;
+}
+
+.inputForm:hover:invalid{
+    box-shadow: 0 0 5px #d33636;
+    background: #fff url("invalid.png") no-repeat 98% center;
+    border-color: #b03535;
+}
+
+/*Parâmetro válido*/
+.inputForm:focus:valid{
+    box-shadow: 0 0 5px #5cd053;
+    background: #fff url("valid.png") no-repeat 98% center;
+    border-color: #5cd053;
+}
+
+.inputForm:hover:valid{
+    box-shadow: 0 0 5px #5cd053;
+    background: #fff url("valid.png") no-repeat 98% center;
+    border-color: #5cd053;
+}
+
+.btnSubmit{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    border: none;
+    cursor: pointer;
+    width: 100px;
+    height: 35px;
+    border-radius: 9px;
+    background-color: rgba(72, 61, 73, 0.89);
+    color: white;
+}
+
+.btnSubmit:hover{
+    background-color: rgba(72, 61, 73, 0.7);
+}
+
+
+#resetConfigs{
+    position: relative;
+    border-radius: 15px;
+    width: 60vw;
+    max-width: 550px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 4px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 11pt;
+    text-align: center;
+}
+/*fim*/
+
+/* Configurações do AcessPoint*/
+
+#ConfigAP p b{
+    font-size: 12pt;
+}
+
+
+
+
+/* fim*/
+/*Configurações do menu*/
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+#checkbox, .btn span { /* Hide the checkbox input & word "Menu" in the button */
+    display: none;
+}
+
+/* Menu button - starts */
+.menu{
+    z-index: 1000;
+    position:fixed;
+    left: 5px;
+    top: 5px;
+}
+
+.btn {
+    user-select: none;
+    display: block;
+    background-color: #252775;
+    color: #fff;
+    width: 55px;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 20px;
+    cursor: pointer;
+    transition: width .3s ease-in-out;
+    border-radius:10px;
+}
+
+
+/* Menu button - ends */
+
+/* Sidebar - starts */
+.sidebar {
+    background-color: #1c1e21;
+    position:fixed;
+    width: 250px;
+    height: 100%;
+    transition: transform .3s ease-in-out;
+    transform: translateX(-300px);
+    user-select: none;
+}
+
+.sidebar ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.sidebar ul a {
+    position: relative;
+    text-decoration: none;
+    display: block;
+    background-color: transparent;
+    color: #BAB5BD;
+    padding: 15px 20px;
+    font-size: 16px;
+}
+
+.sidebar ul a li i {
+    margin-right: 15px;
+}
+
+
+/* Add margin to the icon in the second item */
+
+.sidebar ul a:hover, .sidebar ul a.active {
+    background-color: #161920;
+    color: #fff;
+}
+
+.sidebar ul a:hover::before, .sidebar ul a.active::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    background-color: #247D9E;
+    width: 4px;
+    height: 100%;
+}
+/* Sidebar - ends */
+
+/* Effect of showing the sidebar - starts */
+#checkbox:checked ~ .sidebar {
+    transform: translateX(0);
+}
+
+#checkbox:checked + .btn {
+    width: 250px;
+    padding: 0 20px;
+}
+
+#checkbox:checked + .btn span { /* Show again the word "Menu" in the button */
+    display: inline;
+}
+
+.btn i.menuIcon{
+    content: url("menuPng.png");
+    display: block inline;
+    position: relative;
+    width: 40px;
+    top: 5px;
+    left: -11px;
+
+}
+/* Effect of showing the sidebar - ends */
+
+
+/* Efeitos para página de testes*/
+#testBot{
+    width: 80vw;
+    height: 365px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/*Caixa de diálogo da interface para escolhas*/
+#DialogueSection{ 
+    width: 100%;
+    height: 100%;
+    min-height: 1600px;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 2;
+    animation: escurecerTela 0.3s linear;
+    /* Apenas visível quando solicitada*/ 
+    text-align: center;
+    display: none;
+}
+
+.MessageBox{
+    z-index: 4;
+    position: fixed;
+    width: 300px;
+    height: auto;
+    /*
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 100vh;*/
+    top: 50%;
+    margin-top: -160px;
+    left: 50%;
+    margin-left: -150px;
+
+    border-radius: 15px;
+    background-color: rgba(255,255,255);
+    text-align: center;
+    font: 16pt;
+    animation: surgir 0.3s linear;
+}
+
+
+.MessageBoxImg{
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin-right: auto;
+    margin-left: auto;
+    top:15px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.03);
+    user-select: none;
+}
+
+.MessageBoxImg img{
+    width:100%;
+}
+
+.MessageBoxInfo{
+    position: relative;
+    color: rgb(57, 52, 52);
+    width: 90%;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+    top:30px;
+    border-radius: 15px;
+    padding:10px;
+    background-color: rgba(78, 72, 72, 0.03);
+    font-size: 10pt;
+    text-align: justify;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    user-select: none;
+
+}
+
+.MessageBoxAction{
+    position: relative;
+    width: 80%;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+    display: inline;
+    top:4em;
+    padding-top: 4%;
+    user-select: none;
+}
+
+.MessageBoxButton{
+    cursor: pointer;
+    color: white;
+    width: 80px;
+    height: 25px;
+    user-select: none;
+    font-size: 10pt;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    border-radius: 15px;
+    border: none;
+    background-color: rgb(36, 36, 125,0.8);
+    transition: bakcground-color 0.9s, tranform 0.9s;
+}
+
+.MessageBoxButton:Hover{
+    background-color: rgb(36, 36, 125,1);
+    transform: scale(1.01);
+}
+
+/*Criando caixa*/
+/*fim*/
+
+::-webkit-validation-bubble-message{
+    padding: 1em;
+}

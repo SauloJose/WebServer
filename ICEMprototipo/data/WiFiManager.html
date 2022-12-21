@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MeteoPIN - WiFi </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="icon.png" type="image/png">
+</head>
+<body>
+    <div class="menu">
+        <input type="checkbox" id="checkbox"> 
+        <label class="btn" for="checkbox"> <i class="menuIcon"></i><span>  Menu</span></label>
+        
+        <div class="sidebar">
+            <ul>
+                <a href="home.html" ><li> Página Inicial  </li></a>
+                <a href="configuracoes.html"><li>Configurações</li></a>
+                <a href="comunicacao.html"    class="active" ><li>Comunicação </li></a>
+                <a href="info.html"><li>Informações</li></a>
+            </ul>
+        </div>
+    </div>
+
+    <div id="DialogueSection">
+        <div class="MessageBox" style="height: 340px">
+            <div class="MessageBoxImg">
+            </div>
+            <div class="MessageBoxInfo"> 
+            </div>
+            <div class="MessageBoxAction">
+            </div>
+        </div>
+    </div>
+
+    <div class="container"> 
+        <header>
+            <div class="ConjuntoLogo">
+                <div id="iconLogo">
+                    <img src="icon.png" class="logoFixo">
+                </div>
+                <div id="NomeLogo">
+                    <h2> MeteoPIN </h2>
+
+                </div>
+            </div>
+        </header>
+
+        <div id="navS">
+            Configuração da Conexão > Conexão WiFi
+        </div>
+
+        <section> 
+            <div id="configOBSCon">
+                <h3> WiFi Manager </h3>
+                <p> Adicione as informações de SSID, Senha, IP e Gateway. </p>
+                <div class="obs">
+                    <p> <b>obs:</b> Certifique-se que não colocou nenhuma informação errada e nem deixou alguma informação faltando. </p>
+                    <p> Caso a rede que queira conectar não tenha senha, deixe a caixa para senha em branco.</p>
+                    <p> Endereço de IP e Gateway estão em IPV4 e devem ser escritos da forma "000.000.000.000" (Incluíndo os pontos "."), caso contrário, não funcionará. </p>
+                </div>
+            </div>
+
+            <hr>
+
+            <div id="inputsWiFiManager">
+                <form action ="/WiFiManager.html" method="POST" class="formulario" id="WiFiConfigForm">
+                    <label for="ssid">SSID:<br> </label>
+                    <input type="text" id ="ssid" name="ssid" class="inputForm" placeholder="Nome da Rede" required><br>
+                    <label for="pass">Senha: <br></label>
+                    <input type="text" id ="pass" name="pass" class="inputForm" placeholder="Senha" ><br>
+                    <label for="ip">Endereço de IP: <br></label>
+                    <input type="text" id ="ip" name="ip"  class="inputForm" placeholder="Endereço de Ip" required><br>
+                    <label for="gateway">Endereço de Gateway:<br></label>
+                    <input type="text" id ="gateway" name="gateway"  class="inputForm" placeholder="Endereço do Gateway" required><br>
+                    <label for="mascara">Mascara de rede:<br></label>
+                    <label for="Mascara de IP"></label>
+                    <select name="mascara" id="mascara" class="inputForm" value="none"required>
+                        <option value="" data-default disabled selected> Mascara do IP </option>
+                        <option value="1"> 255.000.000.000</option>
+                        <option value="2"> 255.255.000.000</option>
+                        <option value="3"> 255.255.255.000</option>
+                    </select>
+                    <div class="navOption">
+                        <p class="obs"> Deseja cadastrar as informações?</p>
+                        <input type ="button" value ="Cadastrar" class="btnSubmit" onclick="validar()">
+                    </div>
+                </form>
+                <br>
+                <a href="comunicacao.html">
+                    <button class="btnSubmit"> 
+                            voltar
+                     </button>
+                </a>
+            </div>
+        </section>
+
+        <footer>
+            <span> &#169 </span> Todos os Direitos reservados.<br> 2022 - IFAL - PIN
+        </footer>
+    </div>
+    <script>
+        //Elementos de diálogo
+        const DialogSection = document.querySelector("#DialogueSection"); 
+        const MessageBox = document. querySelector(".MessageBox");
+        const MessageInfo = document.getElementsByClassName('MessageBoxInfo')[0];
+        const img = document.getElementsByClassName('MessageBoxImg')[0];
+        const action = document.getElementsByClassName('MessageBoxAction')[0];
+        const MessageBoxAction = document.querySelector(".MessageBoxAction");
+
+        //Elementos do formulário
+        const ssidInp     = document.getElementById('ssid');
+        const passInp     = document.getElementById('pass');
+        const ipInp       = document.getElementById('ip');
+        const gatewayInp  = document.getElementById('gateway');
+        const mascaraInp  = document.getElementById('mascara');
+
+
+        //Variáveis de estado
+        let state = false;    //Modo de funcionamento do diálogo
+        var ssid = "" ;  //Nome da rede
+        var ip = "";     // IP cadastrado.
+
+        function validar(){
+            //verificando seus dados
+            if(ssidInp.value =="" ||ipInp.value ==""||gatewayInp.value ==""|| mascaraInp.value =="" ){ //verifica se todos os inputs foram preenchidos
+                window.alert("[MeteoPin]: Verifique se preeencheu corretamente todo o formulário ou deixou algo faltando.")
+            }else{
+                abrirDialogo();
+                //atribuindo variáveis
+                ssid = ssidInp.value;
+                ip = ipInp.value;
+                console.log(ip);
+            }
+        }
+
+        function abrirDialogo(){
+            DialogSection.style.display = "block";
+            state= false;
+            if(!state){
+                img.innerHTML='<img src="astro.png" alt="imagem">';
+                MessageInfo.innerHTML=`<p> <b> Deseja salvar as configurações de WiFi no sistema?</b> <p> Caso queira mudar algo, clique em retornar. Caso queira continuar, clique em avançar.</p>`;
+                action.innerHTML='<button class="MessageBoxButton" onclick="voltar()"> retornar </button> <button class="MessageBoxButton" onclick="seguir()"> avançar </button>';
+            }
+        }
+
+        //Função para retornar ao básico
+        function voltar(){
+
+            //Retira janela
+            DialogSection.style.display ="none";
+            MessageBoxAction.style.top="2em";
+            state=false; //reseta para a configuração 1.
+        }
+
+        //Função para seguir para próximo texto
+        function seguir(){
+            state = true;
+            MessageBoxAction.style.top="3em";
+            if(state){
+                MessageBox.style.height ="85%px";
+                img.innerHTML='<img src="load.gif" alt="imagem">';
+                MessageInfo.innerHTML=`<br><p> <b> A estação irá reiniciar em alguns segundos para concluir a operação.</b></p> <p> Acesse a rede <b>${ssidInp.value}</b> configurada e utilize o endereço de IP <b>${ipInp.value}</b> para acessar a página do sistema. </p><p>Clique em OK para continuar.</p>`;
+                action.innerHTML=' <input type ="submit" form="WiFiConfigForm" value ="OK" class="MessageBoxButton">';
+            }
+            //No final ele retorna o state para 0
+            state = false;
+        }
+
+
+
+    </script>
+</body>
+</html>

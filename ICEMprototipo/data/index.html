@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MeteoPin - Página Inicial</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="icon.png" type="image/png">
+</head>
+<body>
+    <div class="menu">
+        <input type="checkbox" id="checkbox"> 
+        <label class="btn" for="checkbox"> <i class="menuIcon"></i><span>  Menu </span></label>
+        
+        <div class="sidebar">
+            <ul>
+                <a href="index.html"  class="active"><li>Página Inicial  </li></a>
+                <a href="index.html" ><li>Configurações</li></a>
+                <a href="index.html" ><li>Comunicação </li></a>
+                <a href="index.html"><li>DashBoards</li></a>
+                <a href="index.html"><li>Lista de Sensores</li></a>
+                <a href="info.html"><li>Informações adicionais</li></a>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container"> 
+        <header>
+            <div class="ConjuntoLogo">
+                <div id="iconLogo">
+                    <img src="icon.png" class="logoFixo">
+                </div>
+                <div id="NomeLogo">
+                    <h2> MeteoPIN </h2>
+
+                </div>
+            </div>
+        </header>
+
+        <div id="navS">
+            Página Inicial
+        </div>
+
+        <section> 
+            <div id="configOBS">
+                <h3> Informações iniciais: </h3>
+                <p> Bem vindo a página de Interface do <b><i>MeteoPIN</i></b>. </p>
+                <p> Aqui apresenta-se informações importantes da estação. Para realizar as configurações necessárias navegue pelas página utilizando o Menu no canto superior esquerdo.</p>
+                <p> Para mais informações, acesse a página "informações". Lá estão presentes dados do projeto bem como a seção de ajuda para aprender a configurar a estação, além de cuidados que se deve tomar ao instalar.</p>
+                <p> Caso queira reiniciar para as configurações de fábrica, vá até a seção configurações e desça até a sessão "reiniciar configurações".</p>
+                <P class="obs">Obs: Aqui ainda é uma página de testes. Ainda não foi construído as demais páginas da interface para a conexão WiFi.</P>
+            </div>
+            <hr>
+            <div id="dadosProt"> 
+                <h3> Informações do Produto: </h3>
+                <p><b> Modelo: </b> %modelo%</p>
+                <p><b>Token:</b> %token%</p>
+                <p><b>Localização:</b> %localização%</p>
+                <p><b>Modo de Conexão: </b>%modo% </p>
+                <p> <b> Ultima atualização:  </b> %atualizacao%</p>
+                <p> <b> Sensores Presentes: </b> </p>
+                <hr>
+                <h3> Informações do Ponto de Acesso (AP):</h3>
+                <p> <b> SSID do AP: </b> %SAP% </p>
+                <p> <b> Senha do AP: </b> %PAP% </p>
+                <p> <b> IP do AP: </b> %IAP% </p>
+            </div>
+        </section>
+
+        <footer>
+            <span> &#169 </span> Todos os Direitos reservados.<br> 2022 - IFAL - PIN
+        </footer>
+    </div>
+</body>
+</html>

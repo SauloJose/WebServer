@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MeteoPIN - Comunicação </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="icon.png" type="image/png">
+</head>
+<body>
+    <div class="menu">
+        <input type="checkbox" id="checkbox"> 
+        <label class="btn" for="checkbox"> <i class="menuIcon"></i><span>  Menu</span></label>
+        
+        <div class="sidebar">
+            <ul>
+                <a href="home.html" ><li></i>Página Inicial  </li></a>
+                <a href="configuracoes.html">Configurações</li></a>
+                <a href="comunicacao.html"    class="active" ><li>Comunicação </li></a>
+                <a href="info.html"><li>Informações</li></a>
+            </ul>
+        </div>
+    </div>
+    <div class="container"> 
+        <header>
+            <div class="ConjuntoLogo">
+                <div id="iconLogo">
+                    <img src="icon.png" class="logoFixo">
+                </div>
+                <div id="NomeLogo">
+                    <h2> MeteoPIN </h2>
+
+                </div>
+            </div>
+        </header>
+
+        <div id="navS">
+            Configuração da Conexão
+        </div>
+
+        <section> 
+            <div id="configOBSCon">
+                <h3> Informações iniciais </h3>
+                <p>Aqui nesta página é possível escolher qual tipo de comunicação a estação irá realizar. As possíveis conexões são: WiFi, Bluetooth e Via SMS. Por enquanto, a única disponível é a comunicação Via WiFi.  </p>
+                <p> Clique em continuar para entrar na página de cadastro da rede na qual você deseja que a estação deseja se conectar. </p>
+
+                <a href="WiFiManager.html" class="conectNext">
+                    <button class="btnSubmit"> 
+                            Continuar
+                     </button>
+                </a>
+            </div>
+        </section>
+
+        <footer>
+            <span> &#169 </span> Todos os Direitos reservados.<br> 2022 - IFAL - PIN
+        </footer>
+    </div>
+</body>
+</html>

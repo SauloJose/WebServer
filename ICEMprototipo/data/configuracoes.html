@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MeteoPIN - Config</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="icon.png" type="image/png">
+</head>
+<body>
+    <div class="menu">
+        <input type="checkbox" id="checkbox"> 
+        <label class="btn" for="checkbox"> <i class="menuIcon"></i><span>  Menu </span></label>
+        
+        <div class="sidebar">
+            <ul>
+                <a href="home.html" ><li>Página Inicial  </li></a>
+                <a href="configuracoes.html"    class="active"  ><li>Configurações</li></a>
+                <a href="comunicacao.html" ><li>Comunicação </li></a>
+                <a href="info.html"><li>Informações adicionais</li></a>
+            </ul>
+        </div>
+    </div>
+
+    <div id="DialogueSection">
+        <div class="MessageBox" style="height: 320px">
+            <div class="MessageBoxImg">
+            </div>
+            <div class="MessageBoxInfo"> 
+            </div>
+            <div class="MessageBoxAction">
+            </div>
+        </div>
+    </div>
+
+    <div class="container"> 
+        <header>
+            <div class="ConjuntoLogo">
+                <div id="iconLogo">
+                    <img src="icon.png" class="logoFixo">
+                </div>
+                <div id="NomeLogo">
+                    <h2> MeteoPIN </h2>
+
+                </div>
+            </div>
+        </header>
+
+        <div id="navS">
+            Configurações da Estação
+        </div>
+
+        <section> 
+            <div id="configOBS">
+                <h3> Apresentação da página: </h3>
+                <p> Aqui nesta página você pode realizar as configurações internas da estação. Dentre elas, configurar SSID e Senha do AcessPoint e modificar alguns parâmetros. Por enquanto, apenas configurar o Ponto de Acesso (AcessPoint) e reiniciar as configurações.</p>
+            </div>
+            <hr>
+            <div id="dadosProt"> 
+                <h3> Configurar Modo AcessPoint</h3>
+                <div ip = "ConfigAP">
+                    <h4> Configurações Atuais </h4>
+                    <p> <b> SSID do AP: </b> <span id="SSAP"> SAP</span></p>
+                    <p> <b> Senha do AP: </b> <span id="PAP"> PAP</span> </p>
+                    <p> <b> IP do AP: </b> <span id="IAP"> IAP</span></p>
+                </div>
+                <br>
+                <div class="obs"><p> <b> Obs: </b> a seguir está um fórmulario para cadastrar novos SSID e Senha para AcessPoint da estação. </p><p>Caso deseja que a rede não tenha senha, não envie esse parâmetro. </p></div>
+                <br>
+                <hr>
+            </div>
+
+            <h3> Novas configurações do Ponto de Acesso: </h3>
+            <div id="inputsWiFiManager">
+                <form action ="/configuracoes.html" method="POST" class="formulario" id="APFormConfig">
+                    <label for="ssidAP">Novo SSID:<br> </label>
+                    <input type="text" id ="ssidAP" name="ssidAP" class="inputForm" placeholder="SSID do AcessPoint" required><br>
+                    <label for="passAP">Nova Senha <br></label>
+                    <input type="text" id ="passAP" name="passAP" class="inputForm" placeholder="Senha do AcessPoint"><br>
+                    <label for="ipAP">Novo IP do AcessPoint: <br></label>
+                    <input type="text" id ="ipAP" name="ipAP" value="192.168.0.200" placeholder="Endereço de IP " class="inputForm"><br>
+                    <div class="navOption">
+                        <p class="obs"> Deseja cadastrar as informações?</p>
+                        <input type ="submit" value ="Cadastrar" class="btnSubmit">
+                    </div>
+                    <br>
+                </form>
+            </div>
+            
+            <hr>
+
+            <div id="dadosProt"> <h3>Reiniciar Configurações da Estação </h3>
+                <div class="obs" style="text-align: justify;"> 
+                    <i><b>Obs:</b> Ao reiniciar as configurações da estação, o SSID e a senha retornarão as configurações de fábrico. Ou seja, SSID como "IDEM_Config" e sem senha. Para realizar essa configuração, clique no botão abaixo.</i>
+                </div>
+                <br>
+                <div class="navOption" style="text-align: center">
+                    <button class="btnSubmit" onclick="abrirDialogo()"> Resetar </button>
+                </div>
+            </div>
+
+        </section>
+
+        <footer>
+            <span> &#169 </span> Todos os Direitos reservados. <br> 2022 - IFAL - PIN
+        </footer>
+    </div>
+
+    
+    <script type="text/javascript" src="script.js">
+    </script>
+    <script>
+        //setando variáveis
+        const DialogSection     =       document.querySelector("#DialogueSection"); 
+        const MessageBox        =       document. querySelector(".MessageBox");
+        const MessageInfo       =       document.getElementsByClassName('MessageBoxInfo')[0];
+        const MessageBoxAction  =       document.querySelector(".MessageBoxAction");
+        const img               =       document.getElementsByClassName('MessageBoxImg')[0];
+        const action            =       document.getElementsByClassName('MessageBoxAction')[0];
+
+        let state = false;
+
+        function abrirDialogo(){
+            DialogSection.style.display = "block";
+            state= false;
+            if(!state){
+                img.innerHTML='<img src="astro.png" alt="imagem">';
+                MessageInfo.innerHTML='                <p> Ao retornar às configurações de fábrica, todos os dados cadastrados até agora serão perdidos.</p><p> Está ciente disso e deseja continuar?</p>';
+                action.innerHTML='<button class="MessageBoxButton" onclick="voltar()"> Não </button> <button class="MessageBoxButton" onclick="seguir()"> Sim </button>';
+            }
+        }
+
+        //Função para retornar ao básico
+        function voltar(){
+
+            //Retira janela
+            DialogSection.style.display ="none";
+            state=false; //reseta para a configuração 1.
+        }
+
+        //Função para seguir para próximo texto
+        function seguir(){
+            state = true;
+            if(state){
+                img.innerHTML='<img src="load.gif" alt="imagem">';
+                MessageInfo.innerHTML='<p> <b>As configurações estão sendo resetadas. </b></p><p> Em alguns segundos a estação irá reiniciar. Reconecte ao AcessPoint com as configurações padrões. </p>';
+                action.innerHTML=' <form action ="/configuracoes.html" method="POST"    class="formulario"><input type="text" id ="OK" name="OK"  value="OK" style="display: none"><input type ="submit" value ="OK" class="MessageBoxButton"></form>';
+                }
+            //No final ele retorna o state para 0
+            state = false;
+        }
+
+         /*Pegando dados salvos no localStorage e colocando local que quero*/
+         var sapConfig  = localStorage.getItem('sapT');
+         var ipapConfig = localStorage.getItem('ipapT');
+         var papConfig  = localStorage.getItem('papT');
+        
+         console.log(" SSID:  " + sapConfig);
+         console.log(" IP: " + ipapConfig);
+         console.log(" SENHA: " + papConfig);
+
+         //Constantes para manipular
+         var  ssidAcessPoint   =  document.getElementById('SSAP');
+         var  passAcessPoint   =  document.getElementById('PAP');
+         var  ipAcessPoint     =  document.getElementById('IAP');
+
+        
+
+         //Setando valores
+         ssidAcessPoint.innerHTML   = sapConfig;
+         ipAcessPoint.innerHTML     = ipapConfig;
+         passAcessPoint.innerHTML   = papConfig;
+         
+    </script>
+</body>
+</html>
